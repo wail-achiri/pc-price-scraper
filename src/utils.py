@@ -1,5 +1,6 @@
+import os
 from datetime import datetime
-
+from constants import PATH_REPORT
 
 def getCurrentDate ():
     localcurrentdateandtime = datetime.now()
@@ -19,6 +20,15 @@ def setMinPrices (list_min, minValues):
         list_min.append("")
     else:
         list_min.append(min(filteredValues))
+        
+
+def clearTerminal ():
+    os.system('cls')
+    
+def getDirectName ():
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    script_dir = os.path.join(script_dir, PATH_REPORT)
+    return script_dir 
 
 
 

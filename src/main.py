@@ -3,11 +3,11 @@ import requests
 import urlsPc as urlsPc
 import utils as Util
 import webbrowser
-import os
+
 
 from bs4 import BeautifulSoup
 from webs_enum import Webs
-from constants import HEADERS, XLSX_EXTENSION, REPORT_NAME, PATH_REPORT, NAN_VALUE
+from constants import HEADERS, XLSX_EXTENSION, REPORT_NAME, NAN_VALUE
 
 
 
@@ -49,7 +49,7 @@ def inputPricePcCom (webName, url, price):
     webbrowser.open(url)
     print("Mete el precio del producto: ", end="")
     price = Util.convertPrice(input())
-    os.system('cls')
+    Util.clearTerminal()
     
     return price 
 
@@ -143,10 +143,11 @@ def generateExcel():
     nameExcel = REPORT_NAME + Util.getCurrentDate() + XLSX_EXTENSION
 
     # Exporta el DataFrame a Excel
-    df.to_excel(PATH_REPORT + nameExcel, index=True)
+    df.to_excel(Util.getDirectName () + nameExcel, index=True)
     
     print("Excel generado")
 
 
 
 initializer()
+
