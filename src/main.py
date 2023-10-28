@@ -1,6 +1,6 @@
 import pandas as pd 
 import requests
-import urlsPc
+import urlsPc as urlsPc
 import utils as Util
 import webbrowser
 import os
@@ -146,8 +146,6 @@ def generateExcel():
     df.to_excel(PATH_REPORT + nameExcel, index=True)
     
     print("Excel generado")
-
-
 
 
 

@@ -15,4 +15,4 @@ REPORT_NAME = "PC_REPORT_"
 
 PATH_REPORT = "./reports/"
 
-NAN_VALUE = np.nan;
+NAN_VALUE = np.nan
